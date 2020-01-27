@@ -7,7 +7,14 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-class AppModule {
+class AppModule(private val app: Application) {
+
+    @Singleton
+    @Provides
+    fun providesApplication() : Application {
+        return app
+    }
+
     @Singleton
     @Provides
     @Named("Hello World")

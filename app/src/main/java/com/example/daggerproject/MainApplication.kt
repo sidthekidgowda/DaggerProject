@@ -2,6 +2,7 @@ package com.example.daggerproject
 
 import android.app.Application
 import com.example.daggerproject.di.AppComponent
+import com.example.daggerproject.di.AppModule
 import com.example.daggerproject.di.DaggerAppComponent
 
 class MainApplication : Application () {
@@ -9,7 +10,7 @@ class MainApplication : Application () {
 
     override fun onCreate() {
         super.onCreate()
-        component = DaggerAppComponent.create()
+        component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
         component.inject(this)
     }
 }
