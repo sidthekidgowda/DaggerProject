@@ -14,11 +14,4 @@ class AppModule(private val app: Application) {
     fun providesApplication() : Application {
         return app
     }
-
-    @Singleton
-    @Provides
-    @Named("Hello World")
-    fun provideHelloWorld() : String {
-        return "Hello DaggerProject"
-    }
 }
