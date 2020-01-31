@@ -12,10 +12,4 @@ class ActivityModule(private val activity : FragmentActivity) {
     fun providesActivity() : FragmentActivity {
         return activity
     }
-
-    @Provides
-    @Named("Hello World")
-    fun provideHelloWorld() : String {
-        return "Hello DaggerProject"
-    }
 }
